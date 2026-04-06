@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- WRAPPER CENTER -->
+<div class="w-full max-w-md mx-auto">
+
+    <!-- CARD -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 md:p-8 text-center hover:shadow-2xl transition duration-300">
+
+        <!-- TITLE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-2">
+            Portfolio
+        </h2>
+
+        <p class="text-gray-500 text-xs mb-6">
+            Data diambil dari GitHub API
+        </p>
+
+        <!-- STATUS -->
+        <div class="flex justify-center mb-6">
+            <div class="flex items-center gap-2 bg-pink-100 px-4 py-2 rounded-full">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-semibold text-pink-600">
+                    Live Connection
+                </span>
+            </div>
+        </div>
+
+        <!-- GRID -->
+        <div id="github-projects" class="grid grid-cols-1 gap-4 text-left">
+
+            <!-- LOADING -->
+            <div class="text-center py-8 col-span-full">
+                <div class="w-8 h-8 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                <p class="mt-3 text-gray-400 text-xs">Loading projects...</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+$(document).ready(function() {
+
+    const username = 'SitiNurlaila814';
+    const projectContainer = $('#github-projects');
+
+    $.ajax({
+        url: "https://api.github.com/users/" + username + "/repos?sort=updated&per_page=6",
+        method: "GET",
+        success: function(repos) {
+
+            let cards = "";
+
+            if (repos.length === 0) {
+                projectContainer.html('<p class="text-center text-gray-400 text-xs">Tidak ada project.</p>');
+                return;
+            }
+
+            repos.forEach(function(repo) {
+
+                const description = repo.description || "Project pengembangan web.";
+                const language = repo.language || "Web";
+
+                cards += `
+                <a href="${repo.html_url}" target="_blank"
+                   class="bg-pink-50 border border-pink-200 rounded-xl p-4 hover:shadow-md transition duration-300">
+
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-semibold text-pink-500">${language}</span>
+                        <span class="text-gray-400">↗</span>
+                    </div>
+
+                    <h3 class="text-sm font-bold text-gray-800 mb-1">
+                        ${repo.name}
+                    </h3>
+
+                    <p class="text-gray-500 text-xs mb-2">
+                        ${description}
+                    </p>
+
+                    <div class="flex gap-3 text-xs text-gray-400">
+                        <span>⭐ ${repo.stargazers_count}</span>
+                        <span>🍴 ${repo.forks_count}</span>
+                    </div>
+
+                </a>
+                `;
+            });
+
+            projectContainer.html(cards);
+        },
+
+        error: function() {
+            projectContainer.html('<p class="text-center text-red-500 text-xs">Gagal mengambil data GitHub</p>');
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

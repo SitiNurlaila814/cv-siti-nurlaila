@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- WRAPPER CENTER -->
+<div class="w-full max-w-md mx-auto">
+
+    <!-- CARD -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 md:p-8 text-center hover:shadow-2xl transition duration-300">
+
+        <!-- Title -->
+        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">
+            Contact Me
+        </h2>
+
+        <!-- FORM -->
+        <form id="formKontak" class="space-y-4 text-left">
+
+            <!-- Nama -->
+            <div>
+                <label class="text-sm text-gray-700 font-medium">Nama</label>
+                <input type="text" id="nama"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                <p class="text-red-500 text-xs mt-1" id="e_nama"></p>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="text-sm text-gray-700 font-medium">Email</label>
+                <input type="text" id="email"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+                <p class="text-red-500 text-xs mt-1" id="e_email"></p>
+            </div>
+
+            <!-- Pesan -->
+            <div>
+                <label class="text-sm text-gray-700 font-medium">Pesan</label>
+                <textarea id="pesan" rows="4"
+                    class="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                <p class="text-red-500 text-xs mt-1" id="e_pesan"></p>
+            </div>
+
+            <!-- Button -->
+            <button type="submit"
+                class="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 rounded-lg transition duration-300">
+                Kirim Pesan
+            </button>
+
+        </form>
+
+        <!-- Notifikasi -->
+        <div id="notif"
+            class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center text-xs">
+            ✅ Pesan berhasil disimpan!
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+
+    // Load dari localStorage
+    $("#nama").val(localStorage.getItem("nama"));
+    $("#email").val(localStorage.getItem("email"));
+    $("#pesan").val(localStorage.getItem("pesan"));
+
+    // Submit Form
+    $("#formKontak").submit(function(e){
+        e.preventDefault();
+
+        let nama = $("#nama").val().trim();
+        let email = $("#email").val().trim();
+        let pesan = $("#pesan").val().trim();
+        let valid = true;
+
+        $(".text-red-500").text("");
+
+        if(nama === ""){
+            $("#e_nama").text("Nama wajib diisi");
+            valid = false;
+        }
+
+        if(email === "" || !email.includes("@")){
+            $("#e_email").text("Email tidak valid");
+            valid = false;
+        }
+
+        if(pesan.length < 5){
+            $("#e_pesan").text("Pesan minimal 5 karakter");
+            valid = false;
+        }
+
+        if(valid){
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("email", email);
+            localStorage.setItem("pesan", pesan);
+
+            $("#notif").fadeIn().delay(2000).fadeOut();
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
