@@ -1,70 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
-<!-- WRAPPER -->
-<div class="w-full max-w-md mx-auto">
+<div class="w-full py-8 md:py-12">
 
-    <!-- CARD -->
-    <div class="bg-white shadow-xl rounded-2xl p-6 md:p-8 text-center hover:shadow-2xl transition duration-300">
+    <!-- TITLE -->
+    <div class="mb-10">
 
-        <!-- Title -->
-        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">
-            My Skills
-        </h2>
+        <div class="flex items-center gap-4">
 
-        <!-- Skills -->
-        <div class="space-y-5 text-left">
+            <h2 class="text-3xl md:text-5xl font-black text-pink-500 whitespace-nowrap">
+                Keahlian Utama
+            </h2>
 
-            <!-- Skill 1 -->
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span class="font-semibold text-gray-700">Mengelola Data</span>
-                    <span class="text-sm text-gray-500">80%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-3">
-                    <div class="bg-pink-500 h-3 rounded-full" style="width:85%"></div>
-                </div>
-            </div>
-
-            <!-- Skill 2 -->
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span class="font-semibold text-gray-700">Microsoft Excel</span>
-                    <span class="text-sm text-gray-500">70%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-3">
-                    <div class="bg-pink-400 h-3 rounded-full" style="width:75%"></div>
-                </div>
-            </div>
-
-            <!-- Skill 3 -->
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span class="font-semibold text-gray-700">Badminton</span>
-                    <span class="text-sm text-gray-500">80%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-3">
-                    <div class="bg-pink-300 h-3 rounded-full" style="width:80%"></div>
-                </div>
+            <div class="h-1 flex-1 bg-pink-100 rounded-full">
+                <div class="h-1 w-32 bg-pink-500 rounded-full"></div>
             </div>
 
         </div>
 
-        <!-- Info -->
-        <div class="mt-6 bg-pink-50 p-4 rounded-lg border border-pink-200">
-            <p class="text-sm text-gray-600">
-                🚀 Terus belajar dan mengembangkan skill 
-            </p>
+    </div>
+
+    <!-- GRID SKILLS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Skill 1 -->
+        <div class="bg-white border border-pink-200 rounded-3xl p-6 shadow-md hover:shadow-xl transition">
+
+            <div class="flex justify-between items-center mb-5">
+
+                <div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center text-2xl">
+                    📊
+                </div>
+
+             
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                Mengelola Data
+            </h3>
+
+            <div class="w-full bg-pink-100 rounded-full h-3">
+                <div class="bg-pink-500 h-3 rounded-full" style="width:85%"></div>
+            </div>
+
         </div>
+
+        <!-- Skill 2 -->
+        <div class="bg-white border border-pink-200 rounded-3xl p-6 shadow-md hover:shadow-xl transition">
+
+            <div class="flex justify-between items-center mb-5">
+
+                <div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center text-2xl">
+                    📈
+                </div>
+
+               
+
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                Microsoft Office
+            </h3>
+
+            <div class="w-full bg-pink-100 rounded-full h-3">
+                <div class="bg-pink-500 h-3 rounded-full" style="width:90%"></div>
+            </div>
+
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="bg-white border border-pink-200 rounded-3xl p-6 shadow-md hover:shadow-xl transition">
+
+            <div class="flex justify-between items-center mb-5">
+
+                <div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center text-2xl">
+                    🏸
+                </div>
+
+              
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                Badminton
+            </h3>
+
+            <div class="w-full bg-pink-100 rounded-full h-3">
+                <div class="bg-pink-500 h-3 rounded-full" style="width:88%"></div>
+            </div>
+
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="bg-white border border-pink-200 rounded-3xl p-6 shadow-md hover:shadow-xl transition">
+
+            <div class="flex justify-between items-center mb-5">
+
+                <div class="w-14 h-14 rounded-2xl bg-pink-50 flex items-center justify-center text-2xl">
+                    💻
+                </div>
+
+               
+
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                Basic WEB Design
+            </h3>
+
+            <div class="w-full bg-pink-100 rounded-full h-3">
+                <div class="bg-pink-500 h-3 rounded-full" style="width:75%"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="mt-8 bg-pink-50 border border-pink-200 rounded-2xl p-5">
+
+        <p class="text-gray-700 text-center text-base md:text-lg">
+            🚀 Terus belajar dan mengembangkan skill untuk meningkatkan kompetensi akademik maupun profesional.
+        </p>
 
     </div>
 
@@ -72,3 +138,4 @@
 
 </body>
 </html>
+

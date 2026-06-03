@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificates</title>
 
     <!-- Tailwind -->
@@ -10,78 +11,159 @@
 
 <body>
 
-<!-- WRAPPER CENTER -->
-<div class="w-full max-w-md mx-auto">
+<div class="w-full py-8 md:py-12">
 
-    <!-- CARD -->
-    <div class="bg-white shadow-xl rounded-2xl p-6 md:p-8 text-center hover:shadow-2xl transition duration-300">
+    <!-- TITLE -->
+    <div class="mb-10">
 
-        <!-- Title -->
-        <h2 class="text-2xl md:text-3xl font-bold text-pink-500 mb-6">
-            My Certificates
-        </h2>
+        <div class="flex items-center gap-4">
 
-        <!-- LIST CERTIFICATE -->
-        <div class="space-y-4 text-left">
+            <h2 class="text-3xl md:text-5xl font-black text-pink-500 whitespace-nowrap">
+                Certificates
+            </h2>
 
-            <!-- Certificate 1 -->
-            <div class="bg-pink-50 rounded-xl p-4 border border-pink-200 flex items-center gap-4 hover:shadow-md transition">
-                <div class="text-2xl">🏆</div>
-                <div>
-                    <h3 class="text-base font-semibold text-gray-800">
-                        Sertifikat Piala Rektor 2024
-                    </h3>
-                    <p class="text-xs text-gray-500">
-                        Divisi Acara
-                    </p>
-                </div>
+            <div class="h-1 flex-1 bg-pink-100 rounded-full">
+                <div class="h-1 w-32 bg-pink-500 rounded-full"></div>
             </div>
 
-            <!-- Certificate 2 -->
-            <div class="bg-pink-50 rounded-xl p-4 border border-pink-200 flex items-center gap-4 hover:shadow-md transition">
-                <div class="text-2xl">📜</div>
-                <div>
-                    <h3 class="text-base font-semibold text-gray-800">
-                        Sertifikat Porskam 2025
-                    </h3>
-                    <p class="text-xs text-gray-500">
-                        Divisi Konsumsi
-                    </p>
-                </div>
-            </div>
-           <!-- Certificate 3 -->
-            <div class="bg-pink-50 rounded-xl p-4 border border-pink-200 flex items-center gap-4 hover:shadow-md transition">
-                <div class="text-2xl">🏆</div>
-                <div>
-                    <h3 class="text-base font-semibold text-gray-800">
-                        Sertifikat LDKM 2024
-                    </h3>
-                    <p class="text-xs text-gray-500">
-                        Peserta
-                    </p>
-                </div>
-            </div>
-
-            <!-- Certificate 4 -->
-            <div class="bg-pink-50 rounded-xl p-4 border border-pink-200 flex items-center gap-4 hover:shadow-md transition">
-                <div class="text-2xl">📜</div>
-                <div>
-                    <h3 class="text-base font-semibold text-gray-800">
-                        Sertifikat KPAM 2024
-                    </h3>
-                    <p class="text-xs text-gray-500">
-                        Peserta
-                    </p>
-                </div>
-            </div>
-        <!-- Highlight -->
-        <div class="mt-6 bg-pink-50 p-4 rounded-lg border border-pink-200">
-            <p class="text-xs md:text-sm text-gray-600">
-                📚 Sertifikat ini menunjukkan komitmen saya dalam meningkatkan skill dan kompetensi
-            </p>
         </div>
 
     </div>
+
+    <!-- GRID CERTIFICATE -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Certificate 4 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="kpam.jpeg"
+                 alt="Sertifikat KPAM"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Sertifikat KPAM 2024
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                    Peserta
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="ldkm.jpeg"
+                 alt="Sertifikat LDKM"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Sertifikat LDKM 2024
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                    Peserta
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Certificate 1 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="rektor.jpg"
+                 alt="Sertifikat Piala Rektor"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Sertifikat Piala Rektor 2024
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                    Divisi Acara
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="porskam.jpeg"
+                 alt="Sertifikat Porskam"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Sertifikat Porskam 2025
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                    Divisi Konsumsi
+                </p>
+
+            </div>
+
+        </div>
+
+        
+
+        
+             <!-- Certificate 5 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="vol1.jpeg"
+                 alt="Sertifikat KPAM"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Juara 1 Turnamen Internal Vol.1
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                     Ma'soem University
+                </p>
+
+            </div>
+        </div>
+             <!-- Certificate 6 -->
+        <div class="bg-white border border-pink-200 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition">
+
+            <img src="vol2.jpeg"
+                 alt="Sertifikat KPAM"
+                 class="w-full h-64 md:h-80 object-cover">
+
+            <div class="p-6">
+
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                    Juara 1 Turnamen Internal Vol.2
+                </h3>
+
+                <p class="text-pink-500 font-semibold mt-2">
+                    Ma'soem University
+                </p>
+
+            </div>
+        </div>
+
+
+        </div>
+
+    </div>
+
+    
 
 </div>
 
